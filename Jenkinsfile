@@ -21,8 +21,7 @@ spec:
       steps {
         container('yarn-build') {
 					sh '''
-					yarn
-					yarn compile
+					yarn watch
 					'''
         }
       }
