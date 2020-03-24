@@ -15,8 +15,8 @@ export class NotebookCellTextModel implements ICell {
 	private _onDidChangeContent = new Emitter<void>();
 	onDidChangeContent: Event<void> = this._onDidChangeContent.event;
 
-	private _onDidChangeMetadata = new Emitter<NotebookCellMetadata | undefined>();
-	onDidChangeMetadata: Event<NotebookCellMetadata | undefined> = this._onDidChangeMetadata.event;
+	private _onDidChangeMetadata = new Emitter<void>();
+	onDidChangeMetadata: Event<void> = this._onDidChangeMetadata.event;
 
 	private _outputs: IOutput[];
 
@@ -41,7 +41,7 @@ export class NotebookCellTextModel implements ICell {
 
 	set metadata(newMetadata: NotebookCellMetadata | undefined) {
 		this._metadata = newMetadata;
-		this._onDidChangeMetadata.fire(this._metadata);
+		this._onDidChangeMetadata.fire();
 	}
 
 	private _buffer: PieceTreeTextBufferFactory | null = null;

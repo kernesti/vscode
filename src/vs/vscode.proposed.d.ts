@@ -1666,10 +1666,8 @@ declare module 'vscode' {
 	export type CellOutput = CellStreamOutput | CellErrorOutput | CellDisplayOutput;
 
 	export interface NotebookCellMetadata {
-		/**
-		 * Controls if the content of a cell is editable or not.
-		 */
-		editable: boolean;
+		editable?: boolean;
+		executionOrder?: number;
 	}
 
 	export interface NotebookCell {
